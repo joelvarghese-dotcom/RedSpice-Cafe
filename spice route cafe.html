@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spice Route Cafe</title>
+    <style>
+      /* ===== BASE ===== */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: italic;
+        background-color: #fbf5ee;
+        color: #3b2a20;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #8c2f1b;
+        color: white;
+        text-align: center;
+        padding: 24px 15px 0;
+      }
+
+      /* ===== NAV (Flexbox) ===== */
+      nav {
+        margin-top: 18px;
+        background-color: #6d2213;
+      }
+      .menu {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 28px;
+        list-style: none;
+        padding: 12px;
+      }
+      .menu a {
+        color: #ffe9c7;
+        text-decoration: none;
+      }
+
+      /* ===== ASIDE (left) + MAIN (Flexbox) ===== */
+      .page {
+        display: flex;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 25px auto;
+        padding: 0 20px;
+      }
+      aside {
+        flex: 0 0 250px;
+        height: fit-content;
+      }
+      main {
+        flex: 1;
+      }
+
+      aside,
+      section {
+        background-color: white;
+        border: 1px solid #ecd9c3;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      section {
+        margin-bottom: 20px;
+      }
+
+      h2,
+      h3 {
+        color: #8c2f1b;
+        margin-bottom: 10px;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: Georgia, serif;
+      }
+
+      .note {
+        background-color: #fff0d9;
+        border-left: 4px solid #d98324;
+        padding: 10px;
+        margin-top: 12px;
+      }
+
+      footer {
+        background-color: #3b2a20;
+        color: white;
+        text-align: center;
+        padding: 18px;
+      }
+
+
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .gallery img {
+        width: calc(25% - 9px);
+        height: 140px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0;
+      }
+      th,
+      td {
+        border: 1px solid #ecd9c3;
+        padding: 10px;
+        text-align: left;
+      }
+      td {
+        font-style: italic;
+      }
+      tbody tr:hover {
+        background-color: #fff0d9;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      input {
+        border: 1px solid #ecd9c3;
+        border-radius: 4px;
+        padding: 8px;
+        font: inherit;
+      }
+      button {
+        background-color: #6d2213;
+        border: 0;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+        font: inherit;
+        margin-top: 8px;
+        padding: 8px 12px;
+      }
+      button:hover {
+        background-color: #8c2f1b;
+      }
+
+      a {
+        cursor: pointer;
+      }
+      a:hover {
+        color: #d98324;
+      }
+      ul,
+      ol {
+        margin: 0 0 12px 24px;
+      }
+
+      @media (max-width: 768px) {
+        .page {
+          flex-direction: column;
+        }
+        aside {
+          flex: 1;
+        }
+        .gallery img {
+          width: calc(50% - 6px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== HEADER ===== -->
+    <header>
+      <h1>Spice Route Cafe</h1>
+      <p>Fresh food. Warm cups. Good company.</p>
+      <p>Joel 26112009</p>
+      <nav>
+        <ul class="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#prices">Prices</a></li>
+          <li><a href="#booking">Book a Table</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ===== ASIDE (left) + MAIN (Flexbox) ===== -->
+    <div class="page">
+      <aside>
+        <h3>Opening Hours</h3>
+        <p>Mon - Fri: 8 am - 9 pm<br />Sat - Sun: 9 am - 11 pm</p>
+        <div class="note">Today's special: Masala chai with samosa.</div>
+        <p><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+        <a href="https://www.facebook.com/">
+          <img src="images/coffee.jpg" alt="Visit Spice Route Cafe on Facebook" width="100" height="100" />
+        </a>
+        <button id="noteColorButton" type="button">Change special box colour</button>
+      </aside>
+
+      <main>
+        <section id="home">
+          <h2>About Us</h2>
+          <p>
+            Spice Route Cafe is a small family-run cafe serving hand-made
+            snacks, filter coffee and seasonal desserts. Come and relax with
+            friends.
+          </p>
+        </section>
+
+        <section id="gallery">
+          <h2>Our Dishes</h2>
+          <div class="gallery">
+            <img src="images/garlic-bread.jpg" alt="Garlic bread" width="150" height="140" />
+            <img src="images/coffee.jpg" alt="A cup of coffee" width="150" height="140" />
+            <img src="images/biscuits.jpg" alt="Biscuits" width="150" height="140" />
+            <img src="images/ice-creams.jpg" alt="Ice cream cones" width="150" height="140" />
+          </div>
+        </section>
+
+        <section id="menu">
+          <h2>Menu Highlights</h2>
+          <h3>How to Make Masala Chai</h3>
+          <ol>
+            <li>Take a tea bag.</li>
+            <li>Boil the water.</li>
+            <li>Mix the tea bag in hot water.</li>
+            <li>Ready to serve.</li>
+          </ol>
+          <ul>
+            <li>Garlic bread</li>
+            <li>Coffee</li>
+            <li>Biscuits</li>
+            <li>Ice creams</li>
+          </ul>
+        </section>
+
+        <section id="prices">
+          <h2>Price List</h2>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Category</th>
+                <th scope="col">Size</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><em>Garlic bread</em></td></tr>
+              <tr><td><em>Coffee</em></td></tr>
+              <tr><td><em>Biscuits</em></td></tr>
+              <tr><td><em>Ice cream</em></td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="booking">
+          <h2>Book a Table</h2>
+          <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+          </form>
+        </section>
+      </main>
+      
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <p>&copy; 2026 Spice Route Cafe. All rights reserved.</p>
+    </footer>
+    <script>
+      const note = document.querySelector(".note");
+      const noteColorButton = document.querySelector("#noteColorButton");
+      let noteColor = "#fff0d9";
+
+      noteColorButton.addEventListener("click", function () {
+        noteColor = noteColor === "#fff0d9" ? "#f3d19c" : "#fff0d9";
+        note.style.backgroundColor = noteColor;
+      });
+    </script>
+  </body>
+</html>
